@@ -1,24 +1,42 @@
 <template>
   <div>
-  <h1>login</h1>
-
-  <input type="submit" value="login" @click.prevent="getIncidents2" />
+    <form @submit.prevent="userLogin">
+      <div>
+        <label>Username</label>
+        <input type="text" v-model="login.username" />
+      </div>
+      <div>
+        <label>Password</label>
+        <input type="text" v-model="login.password" />
+      </div>
+      <div>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'LoginPage',
-  data(){
-    return {data: ""}
+  data() {
+    return {
+      login: {
+        username: '',
+        password: ''
+      }
+    }
   },
-methods: {
-  
+  methods: {
+    async userLogin() {
+      try {
+        let response = await this.$auth.loginWith('local', { data: this.login })
+        console.log(response)
+      } catch (err) {
+        console.log(err)
+      }
+    }
   }
 }
-
 </script>
-
-<style>
 
 </style>
