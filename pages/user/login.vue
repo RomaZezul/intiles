@@ -3,7 +3,7 @@
     <form @submit.prevent="userLogin">
       <div>
         <label>Username</label>
-        <input type="text" v-model="login.username" />
+        <input type="text" v-model="login.login" />
       </div>
       <div>
         <label>Password</label>
@@ -21,7 +21,7 @@ export default {
   data() {
     return {
       login: {
-        username: '',
+        login: '',
         password: ''
       }
     }
@@ -31,6 +31,8 @@ export default {
       try {
         let response = await this.$auth.loginWith('local', { data: this.login })
         console.log(response)
+              console.log(this.$auth.user)
+
       } catch (err) {
         console.log(err)
       }

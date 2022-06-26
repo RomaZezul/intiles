@@ -36,15 +36,21 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: 'https://intiels.azurewebsites.net',
+    baseURL: 'https://localhost:44347',
     
   },
 
   auth: {
+    redirect: {
+      login: '/user/login',
+      logout: '/',
+      callback: '/user/login',
+      home: '/'
+    },
     strategies: {
       local: {
         token: {
-          property: 'token',
+          property: 'access_token',
           global: true,
           // required: true,
           // type: 'Bearer'
@@ -55,7 +61,7 @@ export default {
         },
         endpoints: {
           login: { url: '/api/login', method: 'post' },
-          logout: { url: '/api/logout', method: 'post' },
+          logout: false,//{ url: '/api/logout', method: 'post' },
           user: { url: '/api/account', method: 'get' }
         }
       }
@@ -71,4 +77,8 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  router: {
+    middleware: ['auth']
+  }
 }

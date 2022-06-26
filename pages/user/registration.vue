@@ -7,6 +7,9 @@
 <script>
 export default {
   name: 'RegistrationPage',
+  prosto(){
+     console.log(this.$auth.user)
+  }
 }
 </script>
 
