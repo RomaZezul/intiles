@@ -1,155 +1,103 @@
 <template>
-  <transition :name="modalClass">
-    <div :class="modalClass">
-      <div
-        :class="`${modalClass}-backdrop`"
-        @click="closeModal"
-      >
-        <div :class="[{'simple-modal-scrollable': scrollable}, `${modalClass}-container`]">
-          <div
-            :class="`${modalClass}-content`"
-            role="dialog"
-            :aria-labelledby="headerId"
-            :aria-describedby="bodyId"
-            @click.stop
-          >
-            <header
-              :id="headerId"
-              :class="`${modalClass}-header`"
-            >
-              <slot
-                :id="bodyId"
-                name="header"
-              >
-                Modal title
-              </slot>
-            </header>
-            <section :class="`${modalClass}-body`">
-              <slot name="body">
-                Modal body
-              </slot>
-            </section>
-            <footer :class="`${modalClass}-footer`">
-              <slot name="footer" />
-              <button
-                type="button"
-                @click="closeModal"
-              >
-                Close
-              </button>
-            </footer>
+<transition name="modal">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+            <div class="modal-container">
+
+              <div class="modal-header">
+                <slot name="header">
+                  default header
+                </slot>
+              </div>
+
+              <div class="modal-body">
+                <slot name="body">
+                  default body
+                </slot>
+              </div>
+
+              <div class="modal-footer">
+                <slot name="footer">
+                  default footer
+                  <button class="modal-default-button" @click="$emit('close')">
+                    OK
+                  </button>
+                </slot>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </transition>
+      </transition>
 </template>
 <script>
 export default {
-  name: 'PAModal',
-  props: {
-    show: {
-      type: Boolean,
-      default: false,
-    },
-    scrollable: {
-      type: Boolean,
-      default: false,
-    },
-    headerId: {
-      type: String,
-      required: true,
-      default: null,
-    },
-    bodyId: {
-      type: String,
-      required: true,
-      default: null,
-    },
-    modalClass: {
-      type: String,
-      default: 'simple-modal',
-    },
-  },
-  mounted() {
-    window.addEventListener('keydown', this.escCloseModal);
-  },
-  destroy() {
-    window.removeEventListener('keydown', this.escCloseModal);
-  },
-  methods: {
-    closeModal() {
-      this.$emit('close');
-    },
-    escCloseModal(e) {
-      if (this.show && e.key === 'Escape') {
-        this.closeModal();
-      }
-    },
-  },
+  name: 'ModalWindow',
 };
 </script>
-<style lang="scss">
-  .simple-modal {
-    &-backdrop {
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      transition: opacity 0.3s ease;
-      z-index: 9999;
-    }
-    &-container {
-      position: fixed;
-      top: 0;
-      right: 0;
-      left: 0;
-      bottom: 0;
-      width: auto;
-      margin: 16px;
-    }
-    &-scrollable {
-      overflow-x: hidden;
-      overflow-y: auto;
-    }
-    &-content {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 100%;
-      max-width: 500px;
-      margin: 1.75rem auto;
-      padding: 20px 30px;
-      border-radius: 5px;
-      color: #000;
-      background-color: #fff;
-      box-sizing: border-box;
-      transform: translate(0, 0);
-      transition: all 0.3s ease;
-    }
-    &-header {
-      padding-bottom: 16px;
-      font-size: 25px;
-      text-align: center;
-    }
-    &-footer {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      height: 80px;
-      text-align: center;
-    }
-    &-enter,
-    &-leave-to {
-      opacity: 0;
-    }
-    &-enter-active,
-    &-leave-active {
-      transition: opacity 0.2s ease;
-    }
-  }
+<style >
+    .modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: table;
+  transition: opacity 0.3s ease;
+}
+
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.modal-container {
+  width: 300px;
+  margin: 0px auto;
+  padding: 20px 30px;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+  transition: all 0.3s ease;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.modal-header h3 {
+  margin-top: 0;
+  color: #42b983;
+}
+
+.modal-body {
+  margin: 20px 0;
+}
+
+.modal-default-button {
+  float: right;
+}
+
+/*
+ * The following styles are auto-applied to elements with
+ * transition="modal" when their visibility is toggled
+ * by Vue.js.
+ *
+ * You can easily play with the modal transition by editing
+ * these styles.
+ */
+
+.modal-enter {
+  opacity: 0;
+}
+
+.modal-leave-active {
+  opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+  
 </style>
