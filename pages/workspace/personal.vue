@@ -1,7 +1,10 @@
 <template>
-    <workspase />
+<workspace />
+
 </template>
 
 <script>
-
+export default {
+  layout: 'workspace'
+}
 </script>

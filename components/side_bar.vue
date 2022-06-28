@@ -1,15 +1,16 @@
 <template>
     <div>
-    <NuxtLink to="/workspase/personal" exact>
+    <NuxtLink to="/workspace/personal" exact>
       Personal Pages
     </NuxtLink>
 
-    <NuxtLink tag="button" to="/workspase/shared" exact>
+    <NuxtLink tag="button" to="/workspace/shared" exact>
       Shared Pages
-    <div @click="CreateWorkspace">
-        <NuxtLink tag="button" to="/user/logout" exact>
+   </NuxtLink>
+
+    <button @click="CreateWorkspace">
       Create Workspace
-    </NuxtLink>
+    </button>
 
   </div>
 </template>

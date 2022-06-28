@@ -50,7 +50,7 @@ export default {
     strategies: {
       local: {
         token: {
-          property: 'access_token',
+          property: 'token',
           global: true,
           // required: true,
           // type: 'Bearer'
