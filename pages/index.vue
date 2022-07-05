@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <div>
     <div>
       <div>
@@ -13,6 +14,9 @@
       <button @click="take">ddd</button>
     </div>
   </div>
+=======
+  <div></div>
+>>>>>>> master
 </template>
 
 <script>
