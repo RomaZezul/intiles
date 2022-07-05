@@ -1,11 +1,12 @@
 <template>
   <div>
-    <h1>Shared</h1>
+    <h1>CONTENT</h1>
+    <h2>CONTENT</h2>
   </div>
 </template>
 
-<script>
 
+<script>
 export default {
   layout: 'workspace',
 }

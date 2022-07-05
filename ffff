@@ -1,0 +1,170 @@
+{
+  "profile": {
+    "id": "62aa248d2d75de0ecb6fd920",
+    "username": "Roman Zezul",
+    "email": "romazezul@gmail.com",
+    "avatar": "https://lh3.googleusercontent.com/a/AATXAJz_5Pmppw9knJjc5r4hL_6OFbUMa_02SzMHsY9i=s96-c",
+    "flags": {
+      "MOBILE_USAGE_WARN_NEED_SHOW": true
+    }
+  },
+  "pages": [{
+    "id": "62bb30957a264f3bfc84c591",
+    "viewId": "62bb30967a264f3bfc84c596",
+    "title": "asdf",
+    "previewLink": "/preview/62bb30967a264f3bfc84c596/922beb5b921c01aea4aa2d4ce66768a16795ea0629182ee9bb8fd2b6bf650d97",
+    "formatting": {
+      "blocks": [{
+        "key": "dfq3o",
+        "text": "asdf",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      }],
+      "entityMap": {}
+    },
+    "lastModifiedDate": 1656434852663,
+    "accessLevel": "OWNER",
+    "sharedTo": []
+  }, {
+    "id": "62bb31087a264f3bfc84c615",
+    "viewId": "62bb31087a264f3bfc84c616",
+    "title": "",
+    "formatting": {
+      "blocks": [],
+      "entityMap": {}
+    },
+    "lastModifiedDate": 1656434952052,
+    "accessLevel": "OWNER",
+    "sharedTo": []
+  }],
+  "workspaces": [{
+    "id": "62bb30847a264f3bfc84c57a",
+    "title": "qwe"
+  }],
+  "quickAccess": {
+    "links": []
+  },
+  "status": {
+    "code": 200
+  },
+  "templates": [{
+    "id": "6154c66f4f38aa68f094a589",
+    "title": "3 columns",
+    "covers": [{
+      "media": {
+        "mediaId": "f717b7dd21a8b9c9b47c03b6ddf65e47a3801efc4bba499d0a9bb6d930d799240b989f9a85dc740fb49a78af01845857",
+        "url": "https://media.xtiles.app/f717b7dd21a8b9c9b47c03b6ddf65e47a3801efc4bba499d0a9bb6d930d799240b989f9a85dc740fb49a78af01845857",
+        "filename": "3.png",
+        "length": 1204,
+        "mimeType": "image/png",
+        "fileKey": "f717b7dd21a8b9c9b47c03b6ddf65e47a3801efc4bba499d0a9bb6d930d799240b989f9a85dc740fb49a78af01845857",
+        "image": {
+          "width": 300,
+          "height": 194
+        }
+      },
+      "status": "UPLOADED"
+    }],
+    "owner": "team xtiles",
+    "favourite": false
+  }, {
+    "id": "6154c67b4f38aa68f094a5a5",
+    "title": "4 columns",
+    "covers": [{
+      "media": {
+        "mediaId": "a8a19e65ae20b3f23b3beea5df6a742e0a492ef03ee9a9939f8d36168e2ef0e3dddfa73674d4afb74e45a4503467c56e",
+        "url": "https://media.xtiles.app/a8a19e65ae20b3f23b3beea5df6a742e0a492ef03ee9a9939f8d36168e2ef0e3dddfa73674d4afb74e45a4503467c56e",
+        "filename": "4.png",
+        "length": 1367,
+        "mimeType": "image/png",
+        "fileKey": "a8a19e65ae20b3f23b3beea5df6a742e0a492ef03ee9a9939f8d36168e2ef0e3dddfa73674d4afb74e45a4503467c56e",
+        "image": {
+          "width": 300,
+          "height": 194
+        }
+      },
+      "status": "UPLOADED"
+    }],
+    "owner": "team xtiles",
+    "favourite": false
+  }, {
+    "id": "6154c6944f38aa68f094a5fb",
+    "title": "Grid 3x3",
+    "covers": [{
+      "media": {
+        "mediaId": "ebe0425f2f8cb67f6cefffd61022f28dfd1aa64efa38cf581bef192830ae678abedd5c7608572f1c73c36411c81ff85b",
+        "url": "https://media.xtiles.app/ebe0425f2f8cb67f6cefffd61022f28dfd1aa64efa38cf581bef192830ae678abedd5c7608572f1c73c36411c81ff85b",
+        "filename": "3x3.png",
+        "length": 1721,
+        "mimeType": "image/png",
+        "fileKey": "ebe0425f2f8cb67f6cefffd61022f28dfd1aa64efa38cf581bef192830ae678abedd5c7608572f1c73c36411c81ff85b",
+        "image": {
+          "width": 300,
+          "height": 194
+        }
+      },
+      "status": "UPLOADED"
+    }],
+    "owner": "team xtiles",
+    "favourite": false
+  }, {
+    "id": "6154c6a04f38aa68f094a61d",
+    "title": "Column & Grid 2x2",
+    "covers": [{
+      "media": {
+        "mediaId": "3c28c951c60e165d5f216de9de330163c5a4e65a78d222af6b91bbba0cae98727b11e00bb8d9c1f41d48a522d6c737c1",
+        "url": "https://media.xtiles.app/3c28c951c60e165d5f216de9de330163c5a4e65a78d222af6b91bbba0cae98727b11e00bb8d9c1f41d48a522d6c737c1",
+        "filename": "1+2x2.png",
+        "length": 1594,
+        "mimeType": "image/png",
+        "fileKey": "3c28c951c60e165d5f216de9de330163c5a4e65a78d222af6b91bbba0cae98727b11e00bb8d9c1f41d48a522d6c737c1",
+        "image": {
+          "width": 300,
+          "height": 194
+        }
+      },
+      "status": "UPLOADED"
+    }],
+    "owner": "team xtiles",
+    "favourite": false
+  }],
+  "onboarding": {
+    "state": {
+      "VIEW_WORKSPACE_BUTTON": {
+        "complete": true
+      },
+      "VIEW_SHARE_BUTTON": {
+        "complete": true
+      },
+      "VIEW_CREATE_TAB": {
+        "complete": true
+      },
+      "VIEW_TILE_DND_BUTTON": {
+        "complete": true
+      },
+      "VIEW_TILE_RESIZE": {
+        "complete": true
+      },
+      "VIEW_CREATE_TILE_PLACEHOLDER": {
+        "complete": true
+      },
+      "VIEW_ITEM_DND_BUTTON": {
+        "complete": true
+      },
+      "VIEW_BREAD_CRUMBS": {
+        "complete": true
+      },
+      "VIEW_TAB": {
+        "complete": true
+      }
+    }
+  },
+  "userPaymentInfo": {},
+  "metaInfo": {
+    "splitPages": false,
+    "quickNotesId": "62aa248d2d75de0ecb6fd920-QN"
+  }
+}

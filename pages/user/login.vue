@@ -2,17 +2,35 @@
   <div>
     <form @submit.prevent="userLogin">
       <div>
-        <label>Username</label>
-        <input type="text" v-model="login.login" />
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="email"
+          required=""
+          v-model="login.email"
+        />
       </div>
       <div>
         <label>Password</label>
-        <input type="text" v-model="login.password" />
+        <input
+          type="password"
+          id="Password"
+          placeholder="Пароль"
+          required=""
+          v-model="login.password"
+        />
       </div>
       <div>
         <button type="submit">Submit</button>
       </div>
     </form>
+    <div>
+      <hr />
+      <NuxtLink tag="button" to="/user/registration" exact>
+        Sign Up For Free
+      </NuxtLink>
+    </div>
   </div>
 </template>
 
@@ -21,24 +39,34 @@ export default {
   data() {
     return {
       login: {
-        login: '',
-        password: ''
-      }
+        email: '',
+        password: '',
+      },
     }
+  },
+  async beforeCreate() {
+    console.log(this.$auth.user)
+    if (this.$auth.loggedIn) this.$router.push('/workspace/asdfg')
+  },
+  computed: {
+    loggedIn() {
+      return this.$auth.loggedIn
+    },
   },
   methods: {
     async userLogin() {
       try {
         let response = await this.$auth.loginWith('local', { data: this.login })
-        console.log(response)
-              console.log(this.$auth.user)
 
+        console.log(response)
+        console.log(this.$auth.user)
       } catch (err) {
         console.log(err)
       }
-    }
-  }
+    },
+  },
 }
 </script>
 
+<style>
 </style>

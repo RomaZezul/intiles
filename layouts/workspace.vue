@@ -1,37 +1,68 @@
 <template>
-<div id="app">
-      <button id="show-modal" @click="showModal = true">Show Modal</button>
-      <!-- use the modal component, pass in the prop -->
-      <modal v-if="showModal" @close="showModal = false">
-      <h3 slot="header">custom header</h3>
-      </modal>
-</div>
+  <div class="app">
+    <div class="sidebar">
+      <Sidebar />
+    </div>
+
+    <div class="body">
+      <div class="header">
+          <Header />
+      </div>
+      <Nuxt class="content" />
+    </div>
+  </div>
 </template>
 <script>
-import Modal from '../components/modal_window.vue';
-
+import Sidebar from '~/components/side_bar/side_bar.vue'
+import Header from '~/components/headers/header_workspace/header_workspace.vue'
 export default {
   components: {
-    Modal,
+    Sidebar,
+    Header,
   },
-  data: () => ({
-    isShowModal: false,
-  }),
+
+  computed: {
+    loggedIn() {
+      return this.$auth.loggedIn
+    },
+    user() {
+      return this.$auth.user
+    },
+  },
   methods: {
-    toggleModal() {
-      this.isShowModal = !this.isShowModal;
+    logouts() {
+      console.log(this.$auth.user)
+      this.$auth.logout()
+      this.$router.push('/')
     },
   },
-new Vue({
-        el: "#app",
-        data: {
-          showModal: false
-        }
-      }),
-        methods: {
-    toggleModal() {
-      this.isShowModal = !this.isShowModal;
-    },
-  },
-};
+}
 </script>
+
+<style>
+.app {
+  display: flex;
+  flex: 1 1;
+  min-height: 0;
+}
+.sidebar {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  width: 240px;
+  cursor: pointer;
+}
+.body {
+  position: relative;
+  display: flex;
+  flex: 1 1;
+  flex-direction: column;
+}
+.header {
+  display: block;
+}
+.content{
+  display: block;
+}
+
+</style>

@@ -1,41 +1,66 @@
 <template>
-<transition name="modal">
-        <div class="modal-mask">
-          <div class="modal-wrapper">
-            <div class="modal-container">
-
-              <div class="modal-header">
-                <slot name="header">
-                  default header
-                </slot>
-              </div>
-
-              <div class="modal-body">
-                <slot name="body">
-                  default body
-                </slot>
-              </div>
-
-              <div class="modal-footer">
-                <slot name="footer">
-                  default footer
-                  <button class="modal-default-button" @click="$emit('close')">
-                    OK
-                  </button>
-                </slot>
-              </div>
-            </div>
+  <transition name="modal">
+    <div class="modal-mask">
+      <div class="modal-wrapper">
+        <div class="modal-container">
+          
+          <div class="modal-header">
+            <h1>Create Workspace</h1>
           </div>
+
+          <div class="modal-body">
+              <div>
+                <label>Name Workspace</label>
+                <input type="text" v-model="workspace.name" />
+              </div>
+              <div>
+                <button @click="closeModal">
+                  Close
+                </button>
+                <button @click="createWorkspace">Create</button>
+              </div>
+          </div>
+
         </div>
-      </transition>
+      </div>
+    </div>
+  </transition>
 </template>
+
+
 <script>
 export default {
   name: 'ModalWindow',
-};
+  
+  data() {
+    return {
+      workspace: {
+        name: '',
+      },
+    }
+  },
+  methods: {
+    closeModal() {
+      this.$emit('close')
+    },
+    async createWorkspace() {
+      try {
+        let response = await this.$axios.post('/api/workspaces', {
+          workspaceName: this.workspace.name,
+        })
+        console.log(response)
+        this.closeModal()
+      } catch (err) {
+        console.log(err)
+      }
+    },
+  },
+}
 </script>
+
+
 <style >
-    .modal-mask {
+.modal-mask {
   position: fixed;
   z-index: 9998;
   top: 0;
@@ -98,6 +123,4 @@ export default {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
-
-  
 </style>
