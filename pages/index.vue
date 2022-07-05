@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
   <div>
     <div>
       <div>
@@ -9,14 +8,9 @@
       <NuxtLink tag="button" to="/user/registration" exact>
         Sign Up For Free
       </NuxtLink>
-      <NuxtLink tag="button" to="/user/logout" exact> logout </NuxtLink>
 
-      <button @click="take">ddd</button>
     </div>
   </div>
-=======
-  <div></div>
->>>>>>> master
 </template>
 
 <script>
@@ -24,9 +18,6 @@ export default {
   name: 'IndexPage',
   auth: false,
   methods: {
-    take() {
-      console.log(this.$auth.strategy.token)
-    },
   },
 }
 </script>
