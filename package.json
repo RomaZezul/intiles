@@ -19,7 +19,7 @@
     "vue": "^2.7.2",
     "vue-server-renderer": "^2.7.3",
     "vue-template-compiler": "^2.7.2",
-    "webpack": "^4.46.0"
+    "webpack": "^5.74.0"
   },
   "devDependencies": {
     "eslint-config-prettier": "^8.3.0",
